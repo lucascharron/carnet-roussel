@@ -30,7 +30,7 @@ img {
 }
 
 .conteneur {
-  width: 960px;
+  width: auto;
   margin-inline: auto;
   padding-inline: var(--espace);
 }
