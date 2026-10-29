@@ -504,4 +504,14 @@ Constat : Le texte de la note devient illisible quand la luminosité de l’écr
 
 Hypothèse : La couleur du texte ne contraste pas assez avec le fond
 
-ma solution est de changer la couleur pour qu'elle corresponde à la demande du client et un gris #767676 a un ratio de 4.54:1 donc equivalent a ce que l'ont me demande.
+ma solution est de changer la couleur pour qu'elle corresponde à la demande du client et un gris #767676 a un ratio de 4.54:1 donc equivalent a ce que l'ont me demande. j'ai juste changer la couleur dans le root
+
+avant:
+:root --gris-texte: #b4b9b5.
+
+après:
+:root --gris-texte: #767676.
+
+## A6 A6 ∙ Le pied de page est tout en italique ##
+
+
