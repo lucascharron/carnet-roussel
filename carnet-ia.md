@@ -627,3 +627,12 @@ Priorités
 Je peux appliquer ces corrections si tu le souhaites.
 
 j'ai retenu que les priorités car cela etait des erreurs de ma part sur ma compréhension du code.
+
+
+# exemple de certain prompt que j'ai utilisé pour m'aider a faire cette exercices. #
+
+« j'ai un problème quand fait tab sur mon site pour naviguer avec mon clavier je n'arrive pas a voir les éléments selectionne tu peut me donner un indice pour trouver la solution en me donnant un exemple qui na rien a voir avec le code actuel et ne touche pas au code »
+
+« mon paragraphe livraison offerte devient illisible quand la luminosité de mon ecran baisse peut tu m'aider a comprendre en me donnant un exemple a part de mon code. sans toucher au code actuel. »
+
+« tout mon footer est en italic est ce que cela peut etre du a une balise em qui est resté ouverte? »
