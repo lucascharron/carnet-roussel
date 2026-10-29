@@ -225,6 +225,33 @@ h2 {
   margin: 0;
 }
 
+/* FAQ */
+
+.faq {
+  display: grid; /* empile les questions en colonne */
+  gap: 0.75rem; /* espace entre deux questions */
+}
+
+.faq__item {
+  border: 1px solid var(--vert-clair); /* même bordure que les cartes */
+  border-radius: var(--rayon); /* mêmes coins arrondis que les cartes et la photo */
+  padding: 0.75rem var(--espace); /* marges intérieures, alignées sur l'espacement de la page */
+}
+
+.faq__item[open] {
+  background: var(--vert-clair); /* fond vert pâle quand la réponse est affichée */
+}
+
+.faq__item summary {
+  color: var(--vert); /* couleur des titres de la charte */
+  font-weight: 700; /* la question ressort par rapport à la réponse */
+  cursor: pointer; /* indique que la ligne est cliquable */
+}
+
+.faq__item p {
+  margin: 0.5rem 0 0; /* espace uniquement au-dessus de la réponse */
+}
+
 /* Formulaire */
 
 .formulaire {

@@ -95,6 +95,33 @@
       </ol>
     </section>
 
+    <!-- Section FAQ : même gabarit que les autres sections (conteneur + section) -->
+    <section class="conteneur section" aria-labelledby="titre-faq"> <!-- aria-labelledby : nomme la section par son titre -->
+      <h2 id="titre-faq">Questions fréquentes</h2> <!-- Titre de niveau 2, comme les autres sections ; l'id est lu par aria-labelledby -->
+      <div class="faq"> <!-- Conteneur qui espace les questions entre elles -->
+        <details class="faq__item"> <!-- Bloc repliable natif, fermé par défaut ; aucun JavaScript nécessaire -->
+          <summary>Jusqu'à quelle heure puis-je commander pour une livraison le jour même ?</summary> <!-- Question : seule partie visible quand le bloc est fermé, cliquable et accessible au clavier -->
+          <p>Avant 14 h, pour les zones 1 et 2. Passé cette heure, la commande est livrée le lendemain.</p> <!-- Réponse affichée à l'ouverture -->
+        </details> <!-- Fin de la première question -->
+        <details class="faq__item"> <!-- Deuxième bloc repliable -->
+          <summary>La livraison est-elle gratuite ?</summary> <!-- Question sur les frais -->
+          <p>Elle est offerte dès 60 € d'achat en zone 1. Sinon, le tarif dépend de la zone : de 6,90 € à 14,90 €.</p> <!-- Réponse alignée sur le tableau des tarifs -->
+        </details> <!-- Fin de la deuxième question -->
+        <details class="faq__item"> <!-- Troisième bloc repliable -->
+          <summary>Que se passe-t-il si je suis absent ?</summary> <!-- Question sur l'absence du destinataire -->
+          <p>Nous vous appelons. La livraison se fait en main propre, avec votre carte.</p> <!-- Réponse reprise de l'étape « Nous livrons » -->
+        </details> <!-- Fin de la troisième question -->
+        <details class="faq__item"> <!-- Quatrième bloc repliable -->
+          <summary>Comment savoir que mon bouquet a été livré ?</summary> <!-- Question sur la confirmation -->
+          <p>Un SMS confirme la livraison avec l'heure de remise du bouquet.</p> <!-- Réponse reprise de l'étape « Vous êtes prévenu » -->
+        </details> <!-- Fin de la quatrième question -->
+        <details class="faq__item"> <!-- Cinquième bloc repliable -->
+          <summary>Livrez-vous en dehors de Tours ?</summary> <!-- Question sur les zones -->
+          <p>Oui, jusqu'à 25 km de Tours. Les communes de la zone 3 sont livrées le lendemain pour 14,90 €.</p> <!-- Réponse alignée sur le tableau des zones -->
+        </details> <!-- Fin de la cinquième question -->
+      </div> <!-- Fin du conteneur FAQ -->
+    </section> <!-- Fin de la section FAQ -->
+
     <section class="conteneur section" aria-labelledby="titre-verifier">
       <h2 id="titre-verifier">Livrez-vous chez moi ?</h2>
       <form class="formulaire" action="#" method="get">
