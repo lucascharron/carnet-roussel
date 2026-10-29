@@ -50,7 +50,7 @@ img {
 }
 
 *:focus {
-  outline: none;
+  outline: #000000;
 }
 
 /* En-tête */
