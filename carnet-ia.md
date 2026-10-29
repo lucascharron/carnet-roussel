@@ -512,6 +512,10 @@ avant:
 après:
 :root --gris-texte: #767676.
 
-## A6 A6 ∙ Le pied de page est tout en italique ##
+## A6∙ Le pied de page est tout en italique ##
 
+constat : l’adresse, le téléphone et les horaires sont en italique.
 
+mon hypothèse serait qu'une balise em serait pas fermé, ce qui a pour conséquence de tout mettre en italic.
+
+ma solution serait de trouvé la balise em ouverte et de la supprimer pour tout remettre en place.
