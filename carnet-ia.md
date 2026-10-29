@@ -461,3 +461,47 @@ em: for parts of a component that should grow and shrink with its own text size,
 3. l'ia est un outil pour accélérer le travail pas pour le faire à ma place.
 4. je ne dois jamais donner d'information personnelle que ce soit les miennes ou celles des autres.
 5. je dois spécifier si j'ai utilisé l'ia pour mon travail. 
+
+
+# les anomalies #
+
+## A1 : défilement horizontal en version mobile ##
+
+constat : sur mobile, la page défile de gauche a droite et l'image ne tien pas dans la page mobile.
+
+mon hypothèse est que la width du .contener est a 960px c'est cela qui crée le défilement de gauche a droite, 
+
+pour régler le problème il faudrait remplacer la width de 960px par la width auto pour que le contener s'adapte au format demander sans déborder.
+
+
+## A2 : image écrasée ##
+
+constat : l'image de la camionnette parait écrasée quand ont augmente la largeur du site.
+
+mon hypothèse est que la hauteur de l'image et fixe ce qui peut la rendre écrasée en fonction de la largeur.
+
+pour régler le problème ont passe le height en 100 % au lieu de 220px.
+
+## A3 On se perd au clavier ##
+
+constat :  impossible de savoir quel lien, quel champ ou quel bouton est actif.
+
+ mon hypothèse est qu'une règle CSS supprime l’indicateur de focus, ce qui empêcherai l’accessibilité. et en testant sur le devtool en regardant dans l'onglet :hov et :focus voir si il y a quelque chose qui cloche.
+
+ la solution est que dans le devtool ont voit que le :focus et sur none donc il n'affiche rien. pour plus que cela arrive il faudrait modifier le :focus{outline: #000000;} pour mettre une bordure noir pour naviguer. 
+
+## A4 L’étiquette du code postal ne répond pas ##
+
+Constat : Un clic sur le libellé « Date souhaitée » place le curseur dans le champ de date. Le même clic sur « Code postal » ne fait rien.
+
+mon hypothèse est que dans le fichier html du site le '<label>' ne mene pas directement au code postal et ne fonctionne pas.
+
+ma solution est que dans le html le "label for cp" est mauvais et ne mene pas au code postal. pour régler ca il faut changer le cp en code postal pour que cela remarche.
+
+## A5 Les informations sur les tarifs sont difficiles à lire ##
+
+Constat : Le texte de la note devient illisible quand la luminosité de l’écran est baissée.
+
+Hypothèse : La couleur du texte ne contraste pas assez avec le fond
+
+ma solution est de changer la couleur pour qu'elle corresponde à la demande du client et un gris #767676 a un ratio de 4.54:1 donc equivalent a ce que l'ont me demande.
