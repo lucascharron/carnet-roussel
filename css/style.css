@@ -3,7 +3,7 @@
   --vert-clair: #e7f0e9;
   --rose: #b0305c;
   --texte: #1f2421;
-  --gris-textes: #767676;
+  --gris-texte: #767676;
   --fond: #ffffff;
   --rayon: 0.75rem;
   --espace: 1.5rem;
@@ -49,8 +49,9 @@ img {
   transform: translateY(0);
 }
 
-*:focus {
-  outline: #000000;
+*:focus-visible {
+  outline: 3px solid #000000;
+  outline-offset: 2px;
 }
 
 /* En-tête */
@@ -156,7 +157,7 @@ h2 {
 .tarifs caption {
   text-align: left;
   font-style: italic;
-  color: var(--gris-textes);
+  color: var(--gris-texte);
   padding-bottom: 0.5rem;
 }
 
@@ -177,7 +178,7 @@ h2 {
 }
 
 .note {
-  color: var(--gris-textes);
+  color: var(--gris-texte);
 }
 
 /* Étapes */
@@ -247,7 +248,7 @@ button {
 }
 
 input {
-  border: 1px solid var(--gris-textes);
+  border: 1px solid var(--gris-texte);
 }
 
 button {

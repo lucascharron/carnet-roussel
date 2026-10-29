@@ -480,7 +480,7 @@ constat : l'image de la camionnette parait écrasée quand ont augmente la large
 
 mon hypothèse est que la hauteur de l'image et fixe ce qui peut la rendre écrasée en fonction de la largeur.
 
-pour régler le problème ont passe le height en 100 % au lieu de 220px.
+pour régler le problème ont passe le height en auto au lieu de 220px.
 
 ## A3 On se perd au clavier ##
 
@@ -488,7 +488,7 @@ constat :  impossible de savoir quel lien, quel champ ou quel bouton est actif.
 
  mon hypothèse est qu'une règle CSS supprime l’indicateur de focus, ce qui empêcherai l’accessibilité. et en testant sur le devtool en regardant dans l'onglet :hov et :focus voir si il y a quelque chose qui cloche.
 
- la solution est que dans le devtool ont voit que le :focus et sur none donc il n'affiche rien. pour plus que cela arrive il faudrait modifier le :focus{outline: #000000;} pour mettre une bordure noir pour naviguer. 
+ la solution est que dans le devtool ont voit que le :focus et sur none donc il n'affiche rien. pour plus que cela arrive il faudrait modifier le :focus{outline: none;} en :focus-visible{outline: 3px solid #000000; outline-offset: 2px;} pour mettre une bordure noire visible pour naviguer. 
 
 ## A4 L’étiquette du code postal ne répond pas ##
 
