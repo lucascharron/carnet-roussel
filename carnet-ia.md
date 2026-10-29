@@ -519,3 +519,111 @@ constat : l’adresse, le téléphone et les horaires sont en italique.
 mon hypothèse serait qu'une balise em serait pas fermé, ce qui a pour conséquence de tout mettre en italic.
 
 ma solution serait de trouvé la balise em ouverte et de la supprimer pour tout remettre en place.
+
+
+# suggestion de l'ia apres relecture : #
+
+ fait une relecture de tout ce que j'ai corrigé et ajuster et fait moi des proposition sans 
+  changer le code
+                                                                                             
+  Searched for 1 pattern, read 3 files, ran 2 shell commands
+
+Relecture de tes corrections (propositions seulement, aucun fichier modifié)
+
+Ce qui est bien
+
+- A1, A4 et A6 sont correctement diagnostiqués et corrigés.
+- Tu as vérifié chaque réponse d'IA avec MDN et tu as cité tes sources. Tes règles personnelles
+  sont claires.
+- Le tableau de vérification est bien rempli.
+
+Problèmes dans le code
+
+1. A3, le focus (style.css:52) : la correction ne fonctionne pas.
+outline: #000000; ne donne qu'une couleur, sans épaisseur ni style. Le style par défaut est none,
+donc rien ne s'affiche. Le problème est toujours là.
+- Proposition : *:focus-visible { outline: 3px solid #000; outline-offset: 2px; }. Un contour
+  noir sur le bandeau vert foncé ou sur le pied de page reste peu visible, donc une couleur
+  claire ou rose serait à tester.
+- Ton carnet dit « bordure noire » mais ne précise pas le style. Le validateur W3C ne le détecte
+  pas, car la règle est syntaxiquement valide.
+
+2. A2, l'image (style.css:128-132).
+- height: auto règle la déformation, mais l'image n'a plus de width ni de height dans le HTML.
+  Elle peut donc provoquer un décalage de mise en page au chargement (CLS).
+- Proposition : remettre width="1200" height="800" dans le HTML (c'est ce que le CSS height: auto
+  permet de faire sans déformer). Pour garder un bandeau régulier, tu peux aussi ajouter
+  aspect-ratio: 3 / 2; object-fit: cover;, ce qui correspond à ton « CSS de base » du carnet.
+- Ton carnet dit « passer le height à 100 % » alors que le code utilise auto. Il faut harmoniser.
+
+3. A5, le contraste.
+- Ton carnet écrit --gris-texte mais tu as renommé la variable en --gris-textes (avec un s). Ça
+  marche parce que tout est cohérent. Mais c'est un renommage non voulu : l'original était
+  --gris-texte.
+- Proposition : revenir à --gris-texte, ou au moins le mentionner dans le carnet.
+- #767676 sur blanc fait 4,54:1, donc le seuil AA est juste atteint. Sur la ligne grisée du
+  tableau (--vert-clair), le contraste est plus faible. Un gris plus foncé comme #595959 serait
+  plus sûr.
+- La bordure des champs (input) utilise aussi cette variable. Pour un composant d'interface, le
+  seuil est de 3:1, donc c'est bon.
+
+4. A6, le pied de page (livraison.html:118).
+- Tu as supprimé le <em> ouvert, mais tu as aussi écrit « Fleurs Roussels » avec un s, alors que
+  partout ailleurs c'est « Roussel ». C'est une faute de frappe.
+- Proposition : corriger en « Fleurs Roussel ». Il faudrait aussi se demander si ce <em> a un
+  sens (emphase) ou si un <strong> ou un simple texte conviendrait mieux.
+
+5. A4, le libellé du code postal.
+- Le carnet dit « changer le cp en code postal ». Plus précisément, tu as aligné le for du label
+  sur l'id de l'input (code-postal).
+- Ta correction est bonne. Précise-le avec cette règle : for doit être égal à l'id, et non au
+  name.
+
+6. Alt de l'image (livraison.html:34).
+- « camionette fleur roussel » contient une faute (« camionnette ») et n'a pas de majuscule.
+- Proposition : alt="Camionnette de livraison Fleurs Roussel".
+- L'alt n'est pas dans ta liste d'anomalies, mais le W3C l'exigeait, donc tu l'as ajouté. Il
+  faudrait le noter dans le carnet.
+
+Autres points sur le code (hors anomalies)
+
+- Orthographe : le chapô dit « Commandez avant 14 h, votre bouquet arrive le jour même. » La
+  phrase est correcte, mais la virgule pourrait être un deux-points ou « et ».
+- h3 : .carte h3 a une marge basse mais pas de marge haute. Après le rond numéroté, l'espacement
+  peut sembler irrégulier.
+- Survol des cartes : translateY est réduit au mouvement seulement. Pense aussi à :focus-within
+  si tu rends les cartes interactives.
+- Téléphone : tel:+33261910000 est un numéro fictif, ce qui est acceptable pour un exercice. 02
+  61 91 00 00 correspond bien à +33 2 61 91 00 00.
+- Liens du menu : index.html, bouquets.html et contact.html n'existent pas dans le projet, donc
+  ces liens mènent à des erreurs 404.
+- Formulaire : action="#" est acceptable pour l'instant. Pense à ajouter min sur la date
+  (aujourd'hui) pour éviter de choisir une date passée.
+- Commande avant 14 h : le formulaire ne le vérifie pas, c'est une limite à noter.
+
+Le carnet carnet-ia.md
+
+- Titres Markdown : les # fermants (# 1. … #) sont inutiles. Ils s'affichent correctement, mais
+  ce n'est pas la convention.
+- Expérience sur aspect-ratio / object-fit / transform : tu as noté ce que ces changements
+  étaient « censés » faire, mais pas ce que tu as réellement observé après les avoir testés.
+  Ajoute une ligne « résultat observé » et le retour à la valeur d'origine, avec ta conclusion.
+- Hypothèse sur object-fit : « donne une caractéristique spécifique comme recouvrir un contenu »
+  est vague. Après vérification MDN, tu pourrais la reformuler (cover recadre pour remplir, nonegarde la taille d'origine).
+- Hypothèse sur overflow-x : tu dis « l'élément ne puisse pas dépasser de la page », alors que la propriété gère le débordement horizontal (masquer, défiler, etc.). Tu as marqué « juste » dans le tableau pour la version de Copilot, mais ta propre hypothèse était imprécise : note-le honnêtement.
+- Tableau de vérification : toutes les lignes sont « juste ». Le brief demandait sans doute d'attraper une erreur d'IA. Tu avais pourtant de bons exemples : text-glow (propriété inexistante) et <center> (question piège). Les inclure dans le tableau montrerait mieux ton esprit critique.
+- A2 : « ont » devrait être « on » à plusieurs endroits, et « tien » devrait être « tient », « contener » devrait être « conteneur ». Pense à relire l'orthographe.
+- Règle n°5 : tu dis « je dois spécifier si j'ai utilisé l'IA ». Ajoute une mention en tête du carnet indiquant quels outils ont servi et à quoi.
+- Commits : les messages « v1 complètement corrigée… » sont répétés deux fois. Ils sont moins parlants que les messages A1 à A6.
+
+Priorités
+
+1. A3 (focus) : c'est la seule correction qui ne fonctionne pas.
+2. Faute « Roussels » dans le pied de page.
+3. Alt de l'image et dimensions width/height.
+4. Cohérence entre le carnet et le code (--gris-texte, height).
+5. Compléter le carnet avec les résultats observés.
+
+Je peux appliquer ces corrections si tu le souhaites.
+
+j'ai retenu que les priorités car cela etait des erreurs de ma part sur ma compréhension du code.
